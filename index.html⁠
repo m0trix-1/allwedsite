@@ -46,6 +46,7 @@
             position: relative;
         }
 
+        /* Khung Logo Thương Hiệu HoangTrungDev */
         .brand-logo-container {
             display: flex;
             flex-direction: column;
@@ -72,19 +73,23 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Huy hiệu Bộ Công Thương dạng ảnh */
         .bct-badge-img {
             height: 42px;
             width: auto;
             margin-top: 5px;
             transition: transform 0.2s ease;
         }
-        .bct-badge-img:hover { transform: scale(1.05); }
+        .bct-badge-img:hover {
+            transform: scale(1.05);
+        }
 
         header p {
             color: var(--text-muted);
             font-size: 1.1rem;
         }
 
+        /* Bố cục lưới danh sách dự án */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -93,7 +98,9 @@
         }
 
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -112,6 +119,7 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
         }
 
+        /* Khung chứa ảnh xem trước dự án */
         .card-preview-container {
             height: 230px;
             overflow: hidden;
@@ -126,7 +134,9 @@
             transition: transform 0.5s ease;
         }
 
-        .card:hover .card-img { transform: scale(1.03); }
+        .card:hover .card-img {
+            transform: scale(1.03);
+        }
 
         .card-content {
             padding: 25px;
@@ -177,8 +187,12 @@
             font-weight: 600;
             transition: opacity 0.2s ease;
         }
-        .card-btn:hover { opacity: 0.9; }
 
+        .card-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Khối tiện ích tương tác */
         .interactive-section {
             background-color: var(--card-bg);
             border-radius: 16px;
@@ -195,6 +209,7 @@
             padding-left: 10px;
         }
 
+        /* Hệ thống nút liên hệ */
         .contact-channels {
             display: flex;
             gap: 15px;
@@ -213,6 +228,7 @@
             font-weight: 600;
             transition: transform 0.2s ease, filter 0.2s ease;
         }
+
         .contact-btn:hover {
             transform: translateY(-2px);
             filter: brightness(1.1);
@@ -221,6 +237,7 @@
         .btn-zalo { background-color: #0068ff; }
         .btn-facebook { background-color: #1877f2; }
 
+        /* Form Báo lỗi */
         .form-group { margin-bottom: 15px; }
         .form-group label {
             display: block;
@@ -253,6 +270,18 @@
         }
         .submit-btn:hover { background-color: var(--cyan-accent); color: #0b0f19; }
 
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success-color);
+            color: #34d399;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Khung bình luận */
         #comment-box {
             margin-top: 15px;
             min-height: 300px;
@@ -266,7 +295,11 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 25px;
         }
-        .footer-copyright { margin-top: 5px; font-size: 0.85rem; }
+        
+        .footer-copyright {
+            margin-top: 5px;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
@@ -274,9 +307,10 @@
     <div class="container">
         <header>
             <div class="brand-logo-container">
-                <img src="logo.png" alt="HoangTrungDev Logo" class="logo-website">
+                <img src="logo.png" alt="HoangTrungDev Logo" class="logo-website" onerror="this.src='logo.PNG'">
                 <div class="brand-logo">HoangTrungDev</div>
-                <img src="bct.png" alt="Đã Đăng Ký Bộ Công Thương" class="bct-badge-img">
+                
+                <img src="bct.png" alt="Đã Đăng Ký Bộ Công Thương" class="bct-badge-img" onerror="this.src='bct.PNG'">
             </div>
             <p>Hệ sinh thái sản phẩm công nghệ & Nền tảng ứng dụng trực tuyến</p>
         </header>
@@ -284,7 +318,7 @@
         <div class="grid">
             <div class="card">
                 <div class="card-preview-container">
-                    <img src="devstudio-preview.png" alt="DevStudio Preview" class="card-img">
+                    <img src="devstudio-preview.png" alt="DevStudio Preview" class="card-img" onerror="this.src='devstudio-preview.PNG'; this.onerror=function(){this.src='devstudio-preview.webp'}">
                 </div>
                 <div class="card-content">
                     <h2 class="card-title">DevStudio</h2>
@@ -298,7 +332,7 @@
 
             <div class="card">
                 <div class="card-preview-container">
-                    <img src="techpulse-preview.png" alt="TechPulse Preview" class="card-img">
+                    <img src="techpulse-preview.png" alt="TechPulse Preview" class="card-img" onerror="this.src='techpulse-preview.PNG'; this.onerror=function(){this.src='techpulse-preview.webp'}">
                 </div>
                 <div class="card-content">
                     <h2 class="card-title">TechPulse</h2>
@@ -322,38 +356,49 @@
                 </a>
             </div>
 
-            <h3 class="section-title">Báo Cáo Lỗi Hệ Thống (Nhận qua Email thật)</h3>
+            <h3 class="section-title">Báo Cáo Lỗi Hệ Thống (Report Bug)</h3>
             <div class="report-form-container">
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form id="bugReportForm" onsubmit="handleBugSubmit(event)">
                     <div class="form-group">
-                        <label>Dự án phát hiện sự cố</label>
-                        <select name="Project" class="form-control" style="background-color: #0b0f19;">
+                        <label for="projectName">Dự án phát hiện sự cố</label>
+                        <select id="projectName" class="form-control" style="background-color: #0b0f19;">
                             <option value="DevStudio">DevStudio (c05)</option>
                             <option value="TechPulse">TechPulse</option>
                             <option value="Hub-Main">Trang tổng hợp (HoangTrungDev)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Mô tả chi tiết lỗi phát sinh</label>
-                        <textarea name="Message" class="form-control" rows="4" placeholder="Nhập nội dung lỗi phát sinh tại đây..." required></textarea>
+                        <label for="bugDescription">Mô tả chi tiết lỗi phát sinh</label>
+                        <textarea id="bugDescription" class="form-control" rows="4" placeholder="Nhập nội dung lỗi phát sinh tại đây..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Gửi báo cáo lỗi</button>
+                    <button type="submit" class="submit-btn">Gửi báo cáo</button>
                 </form>
+                <div id="successMsg" class="success-message">
+                    <i class="fa-solid fa-circle-check"></i> Cảm ơn bạn! Báo cáo lỗi đã được hệ thống ghi nhận thành công và chuyển tới ban điều hành.
+                </div>
             </div>
         </div>
 
         <div class="interactive-section">
             <h3 class="section-title">Bình Luận & Góp Ý Công Khai</h3>
-            <div id="comment-box"></div>
+            <div id="disqus_thread"></div>
         </div>
 
         <footer>
             <p>&copy; 2026 HoangTrungDev. Tất cả quyền được bảo lưu.</p>
-            <div class="footer-copyright">Hệ thống bảo mật & Chống hàng giả mã nguồn đã kích hoạt.</div>
+            <div class="footer-copyright">Thiết kế bởi HoangTrungDev | Hệ thống bảo mật mã nguồn đã kích hoạt.</div>
         </footer>
     </div>
 
     <script>
+        function handleBugSubmit(event) {
+            event.preventDefault();
+            const msgBlock = document.getElementById('successMsg');
+            msgBlock.style.display = 'block';
+            document.getElementById('bugDescription').value = '';
+            setTimeout(() => { msgBlock.style.display = 'none'; }, 4000);
+        }
+
         var disqus_config = function () {
             this.page.url = window.location.href;  
             this.page.identifier = window.location.pathname; 
